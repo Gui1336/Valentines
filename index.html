@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa História de Amor</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="grain-overlay"></div>
+    
+    <header class="header">
+        <h1>Nossa História de Amor</h1>
+        <p>Espero que goste da surpresa,</p>
+        <p>e que possa relembrar momentos especiais</p>
+        <div class="scroll-arrow">
+            <span class="material-icons">expand_more</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="timeline">
+            <!-- Os momentos serão carregados dinamicamente aqui -->
+        </div>
+    </div>
+
+    <button class="add-moment-btn" id="addMomentBtn">
+        <span class="material-icons">add</span>
+    </button>
+
+    <div class="modal" id="momentModal">
+        <div class="modal-content">
+            <h2>Adicionar Novo Momento</h2>
+            <form id="momentForm">
+                <div class="form-group">
+                    <label for="date">Data:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="title">Título:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Descrição:</label>
+                    <textarea id="description" name="description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="image">Foto ou Vídeo (opcional)</label>
+                    <input type="file" id="image" name="image" accept="image/*,video/mp4,video/webm,video/ogg">
+                    <small>Formatos aceitos: JPG, PNG, GIF, MP4, WebM, OGG</small>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Salvar</button>
+                    <button type="button" class="btn-secondary" id="cancelBtn">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="final-message">
+        <h2>Para o amor da minha vida</h2>
+        <div class="message-text">
+            <p>Quero que saiba que cada momento ao seu lado é especial.</p>
+            <p>Cada sorriso, cada abraço, cada "eu te amo".</p>
+            <p>Que possamos continuar escrevendo nossa história juntos,</p>
+            <p>Eu você e o limão na nova casinha.</p>
+        </div>
+        <div class="signature">
+            <p>Com todo meu amor,</p>
+            <p class="name">Guilherme</p>
+        </div>
+    </div>
+
+    <script type="module" src="js/supabase.js"></script>
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>
