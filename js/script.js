@@ -291,3 +291,36 @@ document.addEventListener('DOMContentLoaded', () => {
 document.querySelector('.scroll-arrow').addEventListener('click', () => {
     document.querySelector('.timeline').scrollIntoView({ behavior: 'smooth' });
 });
+
+// Music control functionality
+const musicControl = document.getElementById('musicControl');
+const backgroundMusic = document.getElementById('backgroundMusic');
+
+// Try to play music automatically when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    // Set volume to 50%
+    backgroundMusic.volume = 0.5;
+    
+    // Try to play automatically
+    const playPromise = backgroundMusic.play();
+    
+    if (playPromise !== undefined) {
+        playPromise.then(() => {
+            // Autoplay started successfully
+            musicControl.classList.add('playing');
+        }).catch(() => {
+            // Autoplay was prevented
+            console.log('Autoplay prevented by browser');
+        });
+    }
+});
+
+musicControl.addEventListener('click', () => {
+    if (backgroundMusic.paused) {
+        backgroundMusic.play();
+        musicControl.classList.add('playing');
+    } else {
+        backgroundMusic.pause();
+        musicControl.classList.remove('playing');
+    }
+});
